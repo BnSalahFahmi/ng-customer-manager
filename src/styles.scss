@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/buttons';
+
+body{
+  font-family: 'Roboto', 'Noto', sans-serif;
+  margin: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(#607d8b, .4);
+}
