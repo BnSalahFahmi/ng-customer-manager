@@ -1,6 +1,8 @@
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="#"><img draggable="false" class="emoji" alt="⚡" src="https://s.w.org/images/core/emoji/12.0.0-1/svg/26a1.svg" scale="0">NG-CUSTOMER-MANAGER</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="#"><img draggable="false" class="emoji" alt="⚡"
+                                        src="https://s.w.org/images/core/emoji/12.0.0-1/svg/26a1.svg" scale="0">NG-CUSTOMER-MANAGER</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -9,7 +11,7 @@
       <li class="nav-item">
         <a class="nav-link" href="#">
           <i class="fa fa-users">
-            <span class="badge badge-danger">11</span>
+            <span class="badge badge-danger">{{nbCustomers$ | async}}</span>
           </i>
           Customers
         </a>
@@ -25,7 +27,19 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control form-control-sm mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-sm" [ngClass]="loginLogoutText === 'Login' ? 'btn-success' : 'btn-danger'"  type="submit">{{ loginLogoutText }}</button>
+      <div class="log-in-out" [ngClass]="loginLogoutText === 'Login' ? 'custom-btn-success' : 'custom-btn-danger'">
+        <div class="custom-btn custom-btn_log-in-out">
+          <span class="custom-btn__icon">
+            <i *ngIf="loginLogoutText === 'Login'" class="fa fa-sign-in"></i>
+            <i *ngIf="loginLogoutText === 'Logout'" class="fa fa-sign-out"></i>
+          </span>
+          <div class="custom-btn__text">
+            <span class="custom-btn__title">
+              {{ loginLogoutText }}
+            </span>
+          </div>
+        </div>
+      </div>
     </form>
   </div>
 </nav>

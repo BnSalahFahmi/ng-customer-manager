@@ -1,14 +1,20 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { CustomersRoutingModule } from './customers-routing.module';
-
+import {CustomersRoutingModule} from './customers-routing.module';
+import {StoreModule} from '@ngrx/store';
+import {reducer} from './store/customers.reducer';
+import {EffectsModule} from '@ngrx/effects';
+import {CustomersEffects} from './store/customers.effects';
 
 @NgModule({
-  declarations: [],
+  declarations: [CustomersRoutingModule.components],
   imports: [
     CommonModule,
-    CustomersRoutingModule
+    CustomersRoutingModule,
+    StoreModule.forFeature('Customers', reducer),
+    EffectsModule.forFeature([CustomersEffects])
   ]
 })
-export class CustomersModule { }
+export class CustomersModule {
+}

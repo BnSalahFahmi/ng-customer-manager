@@ -4,12 +4,16 @@ import {EnsureModuleLoadedOnceGuard} from './ensure-module-loaded-once.guard';
 import {NavbarModule} from './navbar/navbar.module';
 import {RouterModule} from '@angular/router';
 import {NavbarComponent} from './navbar/navbar.component';
+import {DataService} from './services/data.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, RouterModule, NavbarModule],
-  exports: [NavbarModule]
+  imports: [CommonModule, RouterModule, NavbarModule, HttpClientModule],
+  exports: [NavbarModule, HttpClientModule],
+  providers: [DataService,
+    { provide: 'Window', useFactory: () => window }]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {
 

@@ -1,5 +1,5 @@
 .btn {
-  margin: .375rem  !important;
+  margin: .375rem !important;
   color: inherit !important;
   text-transform: uppercase !important;
   word-wrap: break-word !important;
@@ -7,24 +7,21 @@
   cursor: pointer !important;
   border: 0 !important;
   border-radius: .125rem !important;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12) !important;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12) !important;
-  -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out !important;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out !important;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out !important;
-  padding: .84rem 2.14rem !important;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out !important;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out !important;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !important;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out !important;
+  padding: 0.70rem 2.14rem 0.64rem 2.14rem !important;
+  line-height: 2px !important;
   font-size: .81rem !important;
+
   &:hover {
     outline: 0 !important;
-    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15) !important;
-    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15) !important;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   }
-}
-
-.btn.btn-sm {
-  padding: .5rem 1.6rem !important;
-  font-size: .64rem !important;
 }
 
 .waves-effect {
@@ -40,7 +37,8 @@
 
 .btn-success {
   color: #fff !important;
-  background-color: #00c851  !important;
+  background-color: #00c851 !important;
+
   &:hover {
     color: #fff !important;
     background-color: #218838 !important;
@@ -49,20 +47,32 @@
 }
 
 .btn-info {
-  color: #fff  !important;
-  background-color: #33b5e5  !important;
+  color: #fff !important;
+  background-color: #33b5e5 !important;
+
   &:hover {
-    color: #fff  !important;
-    background-color: #138496  !important;
-    border-color: #117a8b  !important;
+    color: #fff !important;
+    background-color: #138496 !important;
+    border-color: #117a8b !important;
   }
 }
 
 .btn-unique {
-  color: #fff  !important;
-  background-color: #880e4f  !important;
+  color: #fff !important;
+  background-color: #880e4f !important;
+
   &:hover {
-    color: #fff  !important;
-    background-color: #9f105c  !important;
+    color: #fff !important;
+    background-color: #9f105c !important;
   }
+}
+
+.btn-outline-border {
+  border: 1px solid #eee !important;
+  box-shadow: none !important;
+  font-size: 12px !important;
+  margin-bottom: -10px !important;
+  line-height: 0 !important;
+  padding: 13px !important;
+  margin-right: -5px !important;
 }

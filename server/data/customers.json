@@ -1,7 +1,7 @@
 [
       {
             "id": 1,
-            "firstName": "ted",
+            "firstName": "Ted",
             "lastName": "james",
             "gender": "male",
             "address": "1234 Anywhere St.",
@@ -179,7 +179,7 @@
                 {"productName": "Wax", "itemCost": 5.99},
                 {"productName": "Shark Repellent", "itemCost": 7.99}
             ],
-            "latitude": 33.762297, 
+            "latitude": 33.762297,
             "longitude": -84.392953
       },
       {
@@ -310,7 +310,7 @@
                 "abbreviation": "CAT",
                 "name": "Catalonia"
             },
-            "latitude": 41.386444, 
+            "latitude": 41.386444,
             "longitude": 2.111988
       },
       {
@@ -324,7 +324,7 @@
                 "abbreviation": "IS",
                 "name": "Iceland"
             },
-            "latitude": 64.120278, 
+            "latitude": 64.120278,
             "longitude": -21.830471
       },
       {
@@ -342,7 +342,7 @@
                 {"productName": "Baseball", "itemCost": 9.99},
                 {"productName": "Bat", "itemCost": 19.99}
             ],
-            "latitude": 47.341337, 
+            "latitude": 47.341337,
             "longitude": 8.582503
       },
       {
@@ -356,7 +356,7 @@
                 "abbreviation": "WA",
                 "name": "Rio de Janeiro"
             },
-            "latitude": -22.919369, 
+            "latitude": -22.919369,
             "longitude": -43.181836
       }
 ]

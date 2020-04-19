@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-collapse: collapse;
+}
+
+table th {
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+table td {
+  font-size: .9rem;
+  font-weight: 300;
+  font-family: "Roboto",sans-serif;
+}
+
+table.table th, table.table td {
+  padding-top: 1.1rem;
+  padding-bottom: 1rem;
+}
+
+.table th, .table td {
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+

@@ -1,0 +1,33 @@
+<div class="main-container">
+  <div class="row">
+    <div class="col-md-12">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Photo</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Order Total</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let customer of customers;">
+            <td><img src="assets/images/{{ customer.gender | lowercase }}.png"
+                     class="grid-image" alt="Customer Image"/></td>
+            <td>{{ customer.firstName }}</td>
+            <td>{{ customer.lastName }}</td>
+            <td>{{ customer.address }}</td>
+            <td>{{ customer.city }}</td>
+            <td>{{ customer.state.name }}</td>
+            <td><span class="badge badge-info">{{ customer.orderTotal | currency:'USD':'symbol' }}</span></td>
+            <td><button class="btn-outline-border" [routerLink]="['/customers',customer.id,'orders']">View Orders</button></td>
+          </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>

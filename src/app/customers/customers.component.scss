@@ -1,0 +1,38 @@
+.main-container {
+  padding: 5px 15px;
+}
+
+.cart-container {
+  padding: 10px;
+  text-align:center;
+}
+.cart-info {
+  margin-bottom: 10px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Roboto,Noto,sans-serif;
+}
+::ng-deep .btn-outline-white {
+  box-shadow: none !important;
+}
+
+.btn-rounded {
+  width: 33px;
+  line-height: 16px !important;
+  padding: 6px !important;
+  &.active {
+    background-color: #eee;
+  }
+}
+
+.weight500 {
+  font-weight: 500;
+}
+
+.full-right {
+  margin-right: 0px !important;
+}
+
+

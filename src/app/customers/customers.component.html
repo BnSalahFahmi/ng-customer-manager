@@ -1,0 +1,29 @@
+<div class="cart-container">
+  <div class="card card-cascade narrower">
+    <div
+      class="view view-cascade gradient-card-header blue-gradient narrower mx-4 mb-3 d-flex justify-content-between align-items-center">
+      <div>
+        <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"
+                [ngClass]="{active : displayMode === 'CARD'}"
+                (click)="changeDisplayMode('CARD')">
+          <i class="fa fa-th-large mt-0"></i>
+        </button>
+        <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"
+                [ngClass]="{active : displayMode === 'GRID'}"
+                (click)="changeDisplayMode('GRID')">
+          <i class="fa fa-columns mt-0"></i>
+        </button>
+      </div>
+      <span class="white-text mx-3 weight500">Customers</span>
+      <div>
+        <button type="button" class="btn btn-success btn-sm px-2 full-right">
+          <i class="fa fa-plus mt-0"></i> New Customer
+        </button>
+      </div>
+    </div>
+    <div class="px-4">
+      <ng-cm-customers-card [customers]="customers$ | async" [hidden]="displayMode !== 'CARD'"></ng-cm-customers-card>
+      <ng-cm-customers-grid [customers]="customers$ | async" [hidden]="displayMode !== 'GRID'"></ng-cm-customers-grid>
+    </div>
+  </div>
+</div>
