@@ -1,25 +1,31 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
+import {adapter, CUSTOMER_FEATURE_KEY, State as CustomersState} from './customers.reducer';
 
-import {State as CustomersState} from './customers.reducer';
+export const getCustomerState = createFeatureSelector<CustomersState>(CUSTOMER_FEATURE_KEY);
 
-export const getCustomersState = createFeatureSelector<CustomersState>('Customers');
+const {selectIds, selectAll, selectTotal} = adapter.getSelectors();
 
 export const selectCustomers = createSelector(
-  getCustomersState,
-  (state: CustomersState) => state ? state.customers : []
+  getCustomerState,
+  selectAll
+);
+
+export const selectCustomersIds = createSelector(
+  getCustomerState,
+  selectIds
 );
 
 export const selectCustomersCount = createSelector(
-  getCustomersState,
-  (state: CustomersState) => state ? state.customers.length : 0
+  getCustomerState,
+  (state: CustomersState) => state ? state.ids.length : 0
 );
 
 export const selectLoading = createSelector(
-  getCustomersState,
+  getCustomerState,
   (state: CustomersState) => state ? state.loading : false
 );
 
 export const selectErrorMessage = createSelector(
-  getCustomersState,
+  getCustomerState,
   (state: CustomersState) => state ? state.error : null
 );

@@ -1,36 +1,43 @@
 import {Action, createReducer, on} from '@ngrx/store';
 import * as customersActions from './customers.actions';
+import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity';
 
-export interface State {
-  customers: Customer[];
+export const CUSTOMER_FEATURE_KEY = 'customer';
+
+export interface State extends EntityState<Customer> {
   loading: boolean;
-  error: Error;
+  error?: Error | any;
 }
 
-export const initialState: State = {
-  customers: [],
+export const adapter: EntityAdapter<Customer> = createEntityAdapter<Customer>({
+  selectId: item => item.id
+});
+
+export interface CustomerPartialState {
+  readonly [CUSTOMER_FEATURE_KEY]: State;
+}
+
+export const initialState: State = adapter.getInitialState({
   loading: false,
   error: null
-};
+});
 
-
-const customersReducer = createReducer(
+const customerReducer = createReducer(
   initialState,
   on(customersActions.LoadCustomers, state => {
     return ({...state, loading: true});
   }),
   on(customersActions.LoadCustomersSuccess, (state, {customers}) => {
-    return ({...state, customers: customers, loading: false});
+    return adapter.addMany(customers, {
+      ...state,
+      loading: false
+    });
   }),
   on(customersActions.LoadCustomersFailure, (state, error) => {
-    return {...state, loading: false, error: error.error};
+    return {...state, loading: false, error};
   })
 );
 
 export function reducer(state: State | undefined, action: Action) {
-  return customersReducer(state, action);
+  return customerReducer(state, action);
 }
-
-export const getCustomers = (state: State) => state.customers;
-export const getLoading = (state: State) => state.loading;
-export const getError = (state: State) => state.error;

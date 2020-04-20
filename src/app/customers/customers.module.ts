@@ -12,7 +12,7 @@ import {CustomersEffects} from './store/customers.effects';
   imports: [
     CommonModule,
     CustomersRoutingModule,
-    StoreModule.forFeature('Customers', reducer),
+    StoreModule.forFeature('customer', reducer),
     EffectsModule.forFeature([CustomersEffects])
   ]
 })
