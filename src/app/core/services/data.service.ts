@@ -25,6 +25,17 @@ export class DataService {
       );
   }
 
+  getCustomer(id): Observable<Customer> {
+    return this.http.get<Customer>(this.customersBaseUrl + '/' + id)
+      .pipe(
+        map(customer => {
+          this.calculateCustomersOrderTotal([customer]);
+          return customer;
+        }),
+        catchError(() => Observable.throw('Error occurred during retrieving data'))
+      );
+  }
+
   calculateCustomersOrderTotal(customers: Customer[]) {
     for (const customer of customers) {
       if (customer && customer.orders) {

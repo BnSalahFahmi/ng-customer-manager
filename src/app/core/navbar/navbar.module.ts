@@ -1,7 +1,7 @@
 import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {NavbarComponent} from './navbar.component';
-import {EnsureModuleLoadedOnceGuard} from '../ensure-module-loaded-once.guard';
+import {EnsureModuleLoadedOnceGuard} from '../guards/ensure-module-loaded-once.guard';
 
 @NgModule({
   declarations: [NavbarComponent],

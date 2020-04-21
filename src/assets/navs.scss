@@ -1,0 +1,15 @@
+.nav-pills .nav-link.nav-link-bordered.active, .nav-pills .show>.nav-link.nav-link-bordered {
+  line-height: 13px;
+  color: #fff;
+  background-color: #6225E6 !important;
+  height: 33px;
+  border: 1px solid;
+  margin-top: -1px;
+}
+
+a.nav-link.nav-link-bordered {
+  color: #6225E6;
+  line-height: 13px;
+  border: 1px solid;
+  margin: 0px 2px;
+}

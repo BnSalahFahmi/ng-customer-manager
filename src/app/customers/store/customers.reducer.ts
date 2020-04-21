@@ -2,9 +2,10 @@ import {Action, createReducer, on} from '@ngrx/store';
 import * as customersActions from './customers.actions';
 import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity';
 
-export const CUSTOMER_FEATURE_KEY = 'customer';
+export const CUSTOMER_FEATURE_KEY = 'catalog-customers';
 
 export interface State extends EntityState<Customer> {
+  selectedCustomerId: number;
   loading: boolean;
   error?: Error | any;
 }
@@ -18,6 +19,7 @@ export interface CustomerPartialState {
 }
 
 export const initialState: State = adapter.getInitialState({
+  selectedCustomerId: null,
   loading: false,
   error: null
 });

@@ -1,0 +1,26 @@
+<div class="main-view">
+  <div class="main-container">
+    <header>
+      <h3><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Customer Information</h3>
+    </header>
+    <br/>
+    <div class="navbar">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link nav-link-bordered" routerLink="details" routerLinkActive="active">
+            <span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;Customer Details
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-bordered" routerLink="orders" routerLinkActive="active">
+            <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;Customer Orders
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="route-content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

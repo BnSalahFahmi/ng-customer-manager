@@ -1,0 +1,20 @@
+<div class="main-container" *ngIf="customer$ | async as customer">
+  <div class="row" *ngIf="customer && customer.orders">
+    <table class="table table-striped table-hover table-with-margin">
+      <tr *ngFor="let order of customer.orders">
+        <td>{{ order.productName }}</td>
+        <td class="text-right">{{ order.itemCost | currency:'USD':'symbol' }}</td>
+      </tr>
+      <tr class="summary-border">
+        <td><b>Total</b></td>
+        <td class="text-right">{{ customer.orderTotal | currency:'USD':'symbol' }}</td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="customer && !customer.orders" class="row">
+    <span>No orders found</span>
+  </div>
+  <div *ngIf="!customer" class="row">
+    <span>No customer found</span>
+  </div>
+</div>
