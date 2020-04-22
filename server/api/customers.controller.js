@@ -16,7 +16,18 @@ const customerRoute = app => {
   });
 };
 
+const dataInfoRoute = app => {
+  app.get('/api/dataInfos', (req, res) => {
+    res.status(200);
+    res.send({
+      customersCount: customers.length,
+      ordersCount: customers.reduce((total, x) => (x.orders ? total + x.orders.length : total), 0)
+    });
+  });
+};
+
 module.exports.activateCustomersRoutes = function (app) {
   customersRoute(app);
   customerRoute(app);
+  dataInfoRoute(app);
 };

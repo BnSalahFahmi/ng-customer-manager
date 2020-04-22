@@ -1,3 +1,11 @@
 .main-container span{
   margin-left: 20px;
 }
+
+tr.summary-border {
+  background-color: #eeeeee5c;
+}
+
+.table-sm td, .table-sm th {
+  padding: .6rem !important;
+}

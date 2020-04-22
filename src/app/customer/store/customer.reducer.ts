@@ -1,7 +1,7 @@
 import {Action, createReducer, on} from '@ngrx/store';
 import * as customerActions from './customer.actions';
 
-export const CUSTOMER_FEATURE_KEY = 'customer';
+export const CUSTOMER_FEATURE_KEY = 'selected-customer';
 
 export interface State {
   customer: Customer;
@@ -21,8 +21,7 @@ const customerReducer = createReducer(
     return ({...state, loading: true});
   }),
   on(customerActions.LoadCustomerSuccess, (state, {customer}) => {
-    debugger;
-    return ({...state, customer: customer, loading: true});
+    return ({...state, customer: customer, loading: false});
   }),
   on(customerActions.LoadCustomerFailure, (state, error) => {
     return {...state, loading: false, error};

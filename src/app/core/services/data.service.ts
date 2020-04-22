@@ -14,6 +14,14 @@ export class DataService {
 
   }
 
+  getDataInfos(): Observable<DataInfo> {
+    return this.http.get<DataInfo>(this.baseUrl + '/api/dataInfos')
+      .pipe(
+        map(infos => infos),
+        catchError(() => Observable.throw('Error occurred during retrieving data'))
+      );
+  }
+
   getCustomers(): Observable<Customer[]> {
     return this.http.get<Customer[]>(this.customersBaseUrl)
       .pipe(

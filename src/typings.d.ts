@@ -30,3 +30,8 @@ interface Order {
 }
 
 type DisplayMode = 'CARD' | 'GRID';
+
+interface DataInfo {
+  customersCount: number;
+  ordersCount: number;
+}

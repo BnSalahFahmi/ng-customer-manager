@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {selectCustomersCount} from '../../customers/store/customers.selectors';
 import {Observable} from 'rxjs';
+import {selectCustomersCount, selectOrdersCount} from '../store/core.selectors';
+import {LoadDataInfo} from '../store/core.actions';
 
 @Component({
   selector: 'ng-cm-navbar',
@@ -12,13 +13,16 @@ export class NavbarComponent implements OnInit {
 
   loginLogoutText = 'Login';
   nbCustomers$: Observable<number>;
+  nbOrders$: Observable<number>;
 
   constructor(private store$: Store) {
 
   }
 
   ngOnInit(): void {
+    this.store$.dispatch(LoadDataInfo());
     this.nbCustomers$ = this.store$.select(selectCustomersCount);
+    this.nbOrders$ = this.store$.select(selectOrdersCount);
   }
 
 }
