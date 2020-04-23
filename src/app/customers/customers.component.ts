@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
 import * as customersActions from './../customers/store/customers.actions';
-import {selectCustomers} from './store/customers.selectors';
+import {selectCustomers, selectLoading} from './store/customers.selectors';
 
 @Component({
   selector: 'ng-cm-customers',
@@ -15,6 +15,7 @@ export class CustomersComponent implements OnInit {
   filterText: string;
   displayMode: DisplayMode;
   customers$: Observable<Customer[]>;
+  loading$: Observable<boolean>;
 
   constructor(private store$: Store) {
   }
@@ -25,6 +26,7 @@ export class CustomersComponent implements OnInit {
     this.displayMode = 'CARD';
     this.store$.dispatch(customersActions.LoadCustomers());
     this.customers$ = this.store$.select(selectCustomers);
+    this.loading$ = this.store$.select(selectLoading);
   }
 
   changeDisplayMode(displayMode) {

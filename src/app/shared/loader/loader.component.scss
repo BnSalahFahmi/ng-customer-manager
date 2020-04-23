@@ -1,0 +1,51 @@
+.loader {
+  position: fixed;
+  font-family: 'Roboto', sans-serif;
+  z-index: 1000000;
+  height: 2em;
+  width: 2em;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  padding-top: 0px;
+  line-height: 1.8;
+  color: #424242;
+
+  &:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 2.3rem;
+    height: .09rem;
+    background: #424242;
+    animation: blinking 1s infinite;
+    -webkit-animation: blinking 1s infinite;
+  }
+
+  @keyframes blinking {
+
+    0% {
+      background-color: #303333;
+      border: 2px solid #000000;
+    }
+    100% {
+      background-color: #FFF;
+      border: 2px solid #FFF;
+    }
+
+  }
+}

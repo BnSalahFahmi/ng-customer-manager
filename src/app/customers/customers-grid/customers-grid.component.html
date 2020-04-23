@@ -15,7 +15,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let customer of customers;">
+          <tr *ngFor="let customer of customers;" [ngClass]="routeAnimationsElements">
             <td><img src="assets/images/{{ customer.gender | lowercase }}.png"
                      class="grid-image" alt="Customer Image"/></td>
             <td>{{ customer.firstName }}</td>

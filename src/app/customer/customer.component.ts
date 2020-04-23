@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
 import {LoadCustomer} from './store/customer.actions';
 import {ActivatedRoute, Params} from '@angular/router';
+import {ROUTE_ANIMATIONS_ELEMENTS} from '../shared/animations/route.animations';
 
 @Component({
   selector: 'app-customer',
@@ -10,8 +10,7 @@ import {ActivatedRoute, Params} from '@angular/router';
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
-
-  customer$: Observable<Customer>;
+  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
   constructor(private store$: Store, private route: ActivatedRoute) {
 

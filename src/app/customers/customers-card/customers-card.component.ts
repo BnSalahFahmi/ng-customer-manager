@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ROUTE_ANIMATIONS_ELEMENTS} from '../../shared/animations/route.animations';
 
 @Component({
   selector: 'ng-cm-customers-card',
@@ -8,12 +9,14 @@ import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 })
 export class CustomersCardComponent implements OnInit {
 
+  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   @Input() customers = [];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    console.log(this.customers);
+
   }
 
 }
