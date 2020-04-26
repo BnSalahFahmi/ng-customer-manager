@@ -5,7 +5,9 @@ const customers = JSON.parse(fs.readFileSync('server/data/customers.json', 'utf-
 const customersRoute = app => {
   app.get('/api/customers', (req, res) => {
     res.status(200);
-    res.send(customers);
+    res.send(
+      customers
+    );
   });
 };
 
@@ -19,10 +21,10 @@ const customerRoute = app => {
 const dataInfoRoute = app => {
   app.get('/api/dataInfos', (req, res) => {
     res.status(200);
-    res.send({
+    res.send([{
       customersCount: customers.length,
       ordersCount: customers.reduce((total, x) => (x.orders ? total + x.orders.length : total), 0)
-    });
+    }]);
   });
 };
 

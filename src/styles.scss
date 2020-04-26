@@ -1,8 +1,10 @@
+@import '~ngx-toastr/toastr';
 @import './assets/buttons';
 @import './assets/tables';
 @import './assets/navs';
+@import './assets/toastr';
 
-body{
+body {
   font-family: 'Roboto', 'Noto', sans-serif;
   margin: 0px;
 }

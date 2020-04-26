@@ -1,0 +1,21 @@
+.toast-container .ngx-toastr {
+  padding: 15px 15px 15px 50px !important;
+  width: 340px !important;
+  font-size: 14px !important;
+  box-shadow: none !important;
+}
+
+.toast-success {
+  background-color: #00897bd9 !important;
+  border: 1px solid #00897b;
+}
+
+.toast-error {
+  background-color: #bd362ff2 !important;
+  border: 1px solid #bd362f;
+}
+
+.toast-info {
+  background-color: #2f96b4e8;
+  border: 1px solid #2f96b4;
+}

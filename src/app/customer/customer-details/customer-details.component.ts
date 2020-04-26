@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Store} from '@ngrx/store';
-import {selectCustomer} from '../store/customer.selectors';
+import {ActivatedRoute} from '@angular/router';
+import {CustomersService} from '../../core/services/customers.service';
 
 @Component({
   selector: 'ng-cm-customer-details',
@@ -11,12 +11,17 @@ import {selectCustomer} from '../store/customer.selectors';
 export class CustomerDetailsComponent implements OnInit {
 
   customer$: Observable<Customer>;
+  loading$: Observable<boolean>;
 
-  constructor(private store$: Store) {
+  constructor(
+    private customersService: CustomersService,
+    private route: ActivatedRoute) {
+    this.loading$ = this.customersService.loading$;
   }
 
   ngOnInit(): void {
-    this.customer$ = this.store$.select(selectCustomer);
+    const id = +this.route.parent.snapshot.paramMap.get('id');
+    this.customer$ = this.customersService.getByKey(id);
   }
 
 }

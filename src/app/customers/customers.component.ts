@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Store} from '@ngrx/store';
-import * as customersActions from './../customers/store/customers.actions';
-import {selectCustomers, selectLoading} from './store/customers.selectors';
+import {CustomersService} from '../core/services/customers.service';
 
 @Component({
   selector: 'ng-cm-customers',
@@ -17,16 +15,15 @@ export class CustomersComponent implements OnInit {
   customers$: Observable<Customer[]>;
   loading$: Observable<boolean>;
 
-  constructor(private store$: Store) {
+  constructor(private customersService: CustomersService) {
+    this.loading$ = this.customersService.loading$;
   }
 
   ngOnInit(): void {
     this.title = 'Customers';
     this.filterText = 'Filter Customers:';
     this.displayMode = 'CARD';
-    this.store$.dispatch(customersActions.LoadCustomers());
-    this.customers$ = this.store$.select(selectCustomers);
-    this.loading$ = this.store$.select(selectLoading);
+    this.customers$ = this.customersService.getAll();
   }
 
   changeDisplayMode(displayMode) {

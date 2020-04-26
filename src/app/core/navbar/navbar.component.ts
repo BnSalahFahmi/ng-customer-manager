@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {Observable} from 'rxjs';
-import {selectCustomersCount, selectOrdersCount} from '../store/core.selectors';
-import {LoadDataInfo} from '../store/core.actions';
+import {AppService} from '../services/app.service';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'ng-cm-navbar',
@@ -12,17 +10,22 @@ import {LoadDataInfo} from '../store/core.actions';
 export class NavbarComponent implements OnInit {
 
   loginLogoutText = 'Login';
-  nbCustomers$: Observable<number>;
-  nbOrders$: Observable<number>;
+  nbCustomers: number;
+  nbOrders: number;
 
-  constructor(private store$: Store) {
+  constructor(private appService: AppService) {
 
   }
 
   ngOnInit(): void {
-    this.store$.dispatch(LoadDataInfo());
-    this.nbCustomers$ = this.store$.select(selectCustomersCount);
-    this.nbOrders$ = this.store$.select(selectOrdersCount);
+    this.appService.getAll().pipe(
+      map(data => data[0]),
+    ).subscribe(
+      data => {
+        this.nbCustomers = data.customersCount;
+        this.nbOrders = data.ordersCount;
+      }
+    );
   }
 
 }

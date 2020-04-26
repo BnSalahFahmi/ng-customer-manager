@@ -1,29 +1,18 @@
-import {Component, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {LoadCustomer} from './store/customer.actions';
-import {ActivatedRoute, Params} from '@angular/router';
+import {Component} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import {ROUTE_ANIMATIONS_ELEMENTS} from '../shared/animations/route.animations';
+import {CustomersService} from '../core/services/customers.service';
 
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.scss']
 })
-export class CustomerComponent implements OnInit {
+export class CustomerComponent {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
-  constructor(private store$: Store, private route: ActivatedRoute) {
+  constructor(private customersService: CustomersService, private route: ActivatedRoute) {
 
   }
-
-  ngOnInit(): void {
-    this.route.parent.params.subscribe((params: Params) => {
-      const id = +params['id'];
-      if (id) {
-        this.store$.dispatch(LoadCustomer({customerId: id}));
-      }
-    });
-  }
-
 
 }
