@@ -4,10 +4,15 @@
 @import './assets/toastr';
 @import './assets/tables';
 @import './assets/cards';
+@import './assets/pagination';
 
 body {
   font-family: "Roboto", sans-serif;
   margin: 0px;
+}
+
+*:focus {
+  outline: none !important;
 }
 
 /*** Custom Scroll ***/

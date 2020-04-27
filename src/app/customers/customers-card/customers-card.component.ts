@@ -11,6 +11,7 @@ export class CustomersCardComponent implements OnInit {
 
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   @Input() customers = [];
+  page = 1;
 
   constructor() {
   }

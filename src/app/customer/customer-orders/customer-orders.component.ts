@@ -24,4 +24,7 @@ export class CustomerOrdersComponent implements OnInit {
     this.customer$ = this.customersService.getByKey(id);
   }
 
+  totalOrder(customer: Customer) {
+    return customer.orders.map(item => item.itemCost).reduce((a, b) => a + b);
+  }
 }

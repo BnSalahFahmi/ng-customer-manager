@@ -11,7 +11,7 @@
       </tr>
       <tr class="summary-border">
         <td><b>Total</b></td>
-        <td class="text-right">{{ customer.orderTotal | currency:'USD':'symbol' }}</td>
+        <td class="text-right">{{ totalOrder(customer) | currency:'USD':'symbol' }}</td>
       </tr>
     </table>
   </div>

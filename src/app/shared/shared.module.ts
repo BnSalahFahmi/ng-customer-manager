@@ -4,15 +4,18 @@ import {SharedRoutingModule} from './shared-routing.module';
 import {AnimationsService} from './animations/animations.service';
 import {LoaderComponent} from './loader/loader.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [LoaderComponent, CapitalizePipe],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    NgxPaginationModule
   ],
   exports: [
-    LoaderComponent
+    LoaderComponent,
+    NgxPaginationModule
   ],
   providers: [
     AnimationsService

@@ -10,6 +10,7 @@ import {CustomersService} from '../core/services/customers.service';
 export class OrdersComponent implements OnInit {
 
   customers$: Observable<Customer[]>;
+  page = 1;
 
   constructor(private customersService: CustomersService) {
   }

@@ -1,7 +1,17 @@
-<div class="customers view indent">
-  <div class="main-container" *ngIf="customers$ | async as customers">
-    <div class="list-group" *ngFor="let customer of customers">
-      <ng-cm-order-item [customer]="customer"></ng-cm-order-item>
+<div class="card main-container">
+  <div class="customers view indent">
+    <div class="main-content" *ngIf="customers$ | async as customers ">
+      <div class="col-12 pagination justify-content-center">
+        <pagination-controls
+          maxSize="5"
+          directionLinks="true"
+          autoHide="true"
+          (pageChange)="page = $event">
+        </pagination-controls>
+      </div>
+      <div class="list-group" *ngFor="let customer of customers | paginate: { itemsPerPage: 5, currentPage: page }">
+        <ng-cm-order-item [customer]="customer"></ng-cm-order-item>
+      </div>
     </div>
   </div>
 </div>

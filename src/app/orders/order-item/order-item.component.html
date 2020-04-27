@@ -1,11 +1,9 @@
 <a [routerLink]="['/customers',customer.id,'details']" class="list-group-item list-group-item-action flex-column align-items-start">
   <div class="d-flex w-100 justify-content-between">
     <h5 class="mb-1 custommer-name">{{customer.firstName}} {{customer.lastName}}</h5>
-    <div [ngSwitch]="customer">
-      <small *ngSwitchCase="customer.orders && customer.orders.length > 1" class="badge badge-pill custom-badge">{{customer.orders.length}} orders</small>
-      <small *ngSwitchCase="customer.orders && customer.orders.length == 1" class="badge badge-pill custom-badge">1 order</small>
-      <small *ngSwitchDefault class="badge badge-pill custom-badge">0 orders</small>
-    </div>
+    <small *ngIf="customer.orders && customer.orders.length > 1" class="badge badge-pill custom-badge">{{customer.orders.length}} orders</small>
+    <small *ngIf="customer.orders && customer.orders.length == 1" class="badge badge-pill custom-badge">1 order</small>
+    <small *ngIf="!customer.orders || !customer.orders.length" class="badge badge-pill custom-badge">0 orders</small>
   </div>
   <table class="table table-sm table-striped table-bordered" *ngIf="customer.orders && customer.orders.length">
     <tr *ngFor="let order of customer.orders">

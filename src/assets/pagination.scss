@@ -1,0 +1,24 @@
+.ngx-pagination {
+  background: white;
+  border: 1px solid #E0E0E0;
+  padding: 8px 70px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.ngx-pagination .current {
+  padding: 3px 12px;
+  background: #5E35B1 !important;
+  color: #fefefe;
+  cursor: default;
+  border-radius: 3px;
+}
+
+.ngx-pagination li {
+  border-radius: 3px !important;
+}
+
+.justify-content-center {
+  display: flex !important;
+  justify-content: center !important;
+}

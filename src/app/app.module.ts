@@ -12,7 +12,6 @@ import {ToastrModule, ToastrService} from 'ngx-toastr';
 import {AppStoreModule} from './store/app-store.module';
 import {NavbarComponent} from './core/navbar/navbar.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
