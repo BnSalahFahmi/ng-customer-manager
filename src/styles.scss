@@ -1,14 +1,16 @@
 @import '~ngx-toastr/toastr';
 @import './assets/buttons';
-@import './assets/tables';
 @import './assets/navs';
 @import './assets/toastr';
+@import './assets/tables';
+@import './assets/cards';
 
 body {
-  font-family: 'Roboto', 'Noto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0px;
 }
 
+/*** Custom Scroll ***/
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;

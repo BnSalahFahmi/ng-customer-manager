@@ -33,7 +33,7 @@
 
   a {
     display: table-column-group;
-    color: rgba(0, 0, 0, 0.54);
+    color: #000000d1;
     font-size: 15px;
     float: left;
     margin-left: 20px;
@@ -87,6 +87,7 @@
 }
 
 label.label-info {
+  font-family: "Roboto", sans-serif;
   display: block !important;
   text-align: left;
   margin-left: 8px;
@@ -95,11 +96,16 @@ label.label-info {
 }
 
 .text-muted {
-  color: #6c757d!important;
+  color: #6c757d !important;
   width: 65px !important;
   display: inline-table;
 }
 
 .btn-outline-border {
   float: right;
+  color: #606064 !important;
+
+  &:hover {
+    color: #101010 !important;
+  }
 }

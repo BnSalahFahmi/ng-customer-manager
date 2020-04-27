@@ -11,8 +11,17 @@
       <br/>
       {{ customer.city }}, {{ customer.state.name }}
     </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <ng-cm-customer-google-maps [latitude]="customer.latitude"
+                           [longitude]="customer.longitude"
+                           [zoom]="10"
+                           [enabled]="mapEnabled"
+                           [markerText]="'<h3>' + customer.firstName + ' ' + customer.lastName + '</h3>' + customer.city + ', ' + customer.state.name">
+        </ng-cm-customer-google-maps>
+      </div>
+    </div>
   </div>
-</div>
-<div *ngIf="!(customer$ | async)" class="container">
-  No customer found
-</div>
+  <div *ngIf="!(customer$ | async)" class="container">
+    No customer found
+  </div>

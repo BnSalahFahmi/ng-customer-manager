@@ -35,3 +35,9 @@ interface DataInfo {
   customersCount: number;
   ordersCount: number;
 }
+
+interface MapDataPoint {
+  longitude: number;
+  latitutde: number;
+  markerText?: string;
+}
