@@ -28,6 +28,7 @@
     "@ngrx/router-store": "^9.1.0",
     "@ngrx/store": "^9.1.0",
     "@ngrx/store-devtools": "^9.1.0",
+    "@types/googlemaps": "^3.39.3",
     "bootstrap": "^4.4.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
