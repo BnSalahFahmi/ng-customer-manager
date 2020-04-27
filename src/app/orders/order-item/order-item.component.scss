@@ -1,0 +1,34 @@
+:host {
+  margin-bottom: 10px;
+}
+
+table {
+  margin-top: 10px;
+  margin-bottom: 4px;
+
+  tr td {
+    width: 50%;
+  }
+}
+
+.badge.custom-badge {
+  height: 21px;
+  background: beige;
+}
+
+.custommer-name {
+  font-size: 17px;
+  color: darkblue;
+}
+
+.summary {
+  font-weight: 550;
+  font-style: italic;
+  color: #9E9E9E;
+}
+
+.empty-data {
+  text-align: center;
+  font-size: 13px;
+  margin: 5px;
+}

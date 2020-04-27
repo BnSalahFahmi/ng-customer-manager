@@ -6,6 +6,7 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/customers'},
   {path: 'customers/:id', data: {preload: true}, loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule)},
   {path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)},
+  {path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule)},
   {path: '**', pathMatch: 'full', redirectTo: '/customers'}
 ];
 

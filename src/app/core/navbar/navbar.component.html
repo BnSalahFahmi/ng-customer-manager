@@ -6,18 +6,18 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/customers">
           <i class="fa fa-users">
             <span class="badge badge-danger">{{nbCustomers}}</span>
           </i>
           Customers
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/orders">
           <i class="fa fa-tasks">
             <span class="badge badge-warning">{{nbOrders}}</span>
           </i>

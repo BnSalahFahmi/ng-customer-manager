@@ -1,0 +1,7 @@
+<div class="customers view indent">
+  <div class="main-container" *ngIf="customers$ | async as customers">
+    <div class="list-group" *ngFor="let customer of customers">
+      <ng-cm-order-item [customer]="customer"></ng-cm-order-item>
+    </div>
+  </div>
+</div>

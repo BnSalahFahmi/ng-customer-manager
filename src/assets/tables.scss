@@ -35,3 +35,11 @@ table.table th, table.table td {
   text-align: left;
 }
 
+.table-striped tbody tr:nth-of-type(odd) {
+  background: #f1f1f14f !important;
+}
+
+table tbody tr td:first-child {
+  background: #f1f1f1 !important;
+}
+

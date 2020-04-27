@@ -10,10 +10,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {environment} from '../environments/environment';
 import {ToastrModule, ToastrService} from 'ngx-toastr';
 import {AppStoreModule} from './store/app-store.module';
+import {NavbarComponent} from './core/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

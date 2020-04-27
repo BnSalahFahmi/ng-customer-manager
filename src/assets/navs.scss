@@ -1,16 +1,19 @@
 .nav-pills .nav-link.nav-link-bordered.active, .nav-pills .show>.nav-link.nav-link-bordered {
-  line-height: 13px;
-  color: #fff;
-  background-color: #6225E6 !important;
-  height: 32px;
-  border: 1px solid;
-  margin-top: -1px;
-  border: 1px solid #4527A0;
+  display: inline-block !important;
+  padding: 2px 14px 4px 6px !important;
+  background-color: #eeeeee66;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  color: chocolate;
+  margin-right: 10px;
 }
 
 a.nav-link.nav-link-bordered {
-  color: #6225E6;
-  line-height: 13px;
-  border: 1px solid;
-  margin: 0px 2px;
+  display: inline-block !important;
+  padding: 2px 14px 4px 6px !important;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  color: chocolate;
+  margin-right: 10px;
 }

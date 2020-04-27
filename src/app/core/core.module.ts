@@ -14,7 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
     NavbarModule,
     HttpClientModule
   ],
-  exports: [NavbarModule, HttpClientModule],
+  exports: [HttpClientModule],
   providers: [DataService,
     {provide: 'Window', useFactory: () => window}]
 })

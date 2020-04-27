@@ -4,9 +4,9 @@ import {NavbarComponent} from './navbar.component';
 import {EnsureModuleLoadedOnceGuard} from '../guards/ensure-module-loaded-once.guard';
 
 @NgModule({
-  declarations: [NavbarComponent],
+  declarations: [],
   imports: [CommonModule],
-  exports: [NavbarComponent]
+  exports: []
 })
 export class NavbarModule extends EnsureModuleLoadedOnceGuard {
 

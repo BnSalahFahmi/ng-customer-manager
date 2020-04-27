@@ -1,9 +1,9 @@
 <div class="main-container">
   <div class="row" *ngIf="customer$ | async as customer">
     <div class="col-md-2">
-      <img src="assets/images/{{customer.gender | lowercase}}.png" class="details-image"/>
+      <img src="assets/images/{{customer.gender | lowercase}}.png" class="details-image img-thumbnail"/>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-4">
       <h4>
         {{ customer.firstName }} {{ customer.lastName | uppercase }}&nbsp;
       </h4>

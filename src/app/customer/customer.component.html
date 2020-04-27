@@ -1,3 +1,4 @@
+<!--
 <div class="main-view">
   <div class="main-container">
     <header>
@@ -24,3 +25,24 @@
   </div>
 </div>
 
+-->
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Customer Informations</h5>
+    <ul class="nav nav-pills card-header-pills">
+      <li class="nav-item">
+        <a class="nav-link nav-link-bordered" routerLink="details" routerLinkActive="active">
+          <span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;Customer Details
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-bordered" routerLink="orders" routerLinkActive="active">
+          <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;Customer Orders
+        </a>
+      </li>
+    </ul>
+    <div class="content-router">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

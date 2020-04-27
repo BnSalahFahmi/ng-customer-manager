@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.appService.getAll().pipe(
-      map(data => data[0]),
+      map(data => data[0])
     ).subscribe(
       data => {
         this.nbCustomers = data.customersCount;
@@ -27,5 +27,4 @@ export class NavbarComponent implements OnInit {
       }
     );
   }
-
 }
