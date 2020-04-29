@@ -1,0 +1,97 @@
+<div class="container-fluid">
+  <form (ngSubmit)="submit()" #form="ngForm" class="customer_form bg-light py-3">
+    <div class="controls">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" class="form-control form-control-sm" name="firstName"
+                   [(ngModel)]="customer.firstName" id="firstName"
+                   #firstName="ngModel" [ngClass]="{ 'is-invalid': form.submitted && firstName.invalid }"
+                   required>
+            <div *ngIf="form.submitted && firstName.invalid" class="invalid-feedback">
+              <div *ngIf="firstName.errors.required">First Name is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="lastName">LastName *</label>
+            <input type="text" name="lastName" class="form-control form-control-sm"
+                   [(ngModel)]="customer.lastName" id="lastName"
+                   #lastName="ngModel" [ngClass]="{ 'is-invalid': form.submitted && lastName.invalid }"
+                   required>
+            <div *ngIf="form.submitted && lastName.invalid" class="invalid-feedback">
+              <div *ngIf="lastName.errors.required">Last Name is required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label form="form_gender">Gender *</label>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" [(ngModel)]="customer.gender" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male">
+      <label class="form-check-label" for="inlineRadio1">Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" [(ngModel)]="customer.gender" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female">
+      <label class="form-check-label" for="inlineRadio2">Female</label>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="address">Address *</label>
+          <input type="text" name="address" class="form-control form-control-sm"
+                 [(ngModel)]="customer.address" id="address"
+                 #address="ngModel" [ngClass]="{ 'is-invalid': form.submitted && address.invalid }" required>
+          <div *ngIf="form.submitted && address.invalid" class="invalid-feedback">
+            <div *ngIf="address.errors.required">Address is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="city">City *</label>
+          <input type="text" name="city" class="form-control form-control-sm" [(ngModel)]="customer.city"
+                 #city="ngModel" id="city"
+                 [ngClass]="{ 'is-invalid': form.submitted && city.invalid }" required>
+          <div *ngIf="form.submitted && city.invalid" class="invalid-feedback">
+            <div *ngIf="city.errors.required">City is required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group" *ngIf="states$  | async as states">
+          <label>State</label>
+          <select class="form-control form-control-sm"
+                  [(ngModel)]="customer.state.abbreviation"
+                  name="state"
+                  required>
+            <option *ngFor="let state of states" [ngValue]="state.abbreviation">{{state.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div *ngIf="customer">
+          <div class="alert alert-warning" *ngIf="customer.id && deleteMessageEnabled">
+            Delete Customer?
+            <button class="btn btn-danger">Yes</button>
+            <button class="btn btn-default" (click)="deleteMessageEnabled = false">No</button>
+          </div>
+          <button class="btn btn-danger" *ngIf="customer.id && !deleteMessageEnabled" (click)="deleteMessageEnabled = true">
+            Delete
+          </button>
+
+          <div class="pull-right" *ngIf="!deleteMessageEnabled">
+            <button class="btn btn-danger" (click)="cancelRequest()">Cancel</button>
+            <button type="submit" class="btn btn-success"
+                    [disabled]="customerForm.pristine || !customerForm.valid">{{ customer.id ? 'Update' : 'Insert' }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

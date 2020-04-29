@@ -41,3 +41,8 @@ interface MapDataPoint {
   latitutde: number;
   markerText?: string;
 }
+
+interface ApiResponse {
+  status: boolean;
+  error?: string;
+}

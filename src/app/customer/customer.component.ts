@@ -1,6 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {ROUTE_ANIMATIONS_ELEMENTS} from '../shared/animations/route.animations';
 import {CustomersService} from '../core/services/customers.service';
 
 @Component({
@@ -8,11 +7,18 @@ import {CustomersService} from '../core/services/customers.service';
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.scss']
 })
-export class CustomerComponent {
-  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
+export class CustomerComponent implements OnInit {
+
+  currentForm = 'existed-customer';
 
   constructor(private customersService: CustomersService, private route: ActivatedRoute) {
 
+  }
+
+  ngOnInit(): void {
+    if (this.route.snapshot.params['id'] === '#') {
+      this.currentForm = 'new-customer';
+    }
   }
 
 }

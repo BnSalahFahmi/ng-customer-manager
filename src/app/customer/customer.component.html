@@ -1,34 +1,5 @@
-<!--
-<div class="main-view">
-  <div class="main-container">
-    <header>
-      <h3><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Customer Information</h3>
-    </header>
-    <br/>
-    <div class="navbar">
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link nav-link-bordered" routerLink="details" routerLinkActive="active">
-            <span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;Customer Details
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-bordered" routerLink="orders" routerLinkActive="active">
-            <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;Customer Orders
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="route-content-container" [ngClass]="routeAnimationsElements">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-</div>
-
--->
-
 <div class="card">
-  <div class="card-body">
+  <div class="card-body" *ngIf="currentForm == 'existed-customer';else new_customer">
     <h5 class="card-title">Customer Informations</h5>
     <ul class="nav nav-pills card-header-pills justify-content-center">
       <li class="nav-item">
@@ -41,8 +12,22 @@
           <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;Customer Orders
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-bordered" routerLink="edit" routerLinkActive="active">
+          <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;Edit Customer
+        </a>
+      </li>
     </ul>
     <div class="content-router">
       <router-outlet></router-outlet>
     </div>
   </div>
+  <ng-template #new_customer>
+    <div class="card-body">
+      <h5 class="card-title">New Customer</h5>
+      <div class="content-router">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </ng-template>
+</div>

@@ -2,18 +2,12 @@ import {Injectable} from '@angular/core';
 import {Actions, ofType} from '@ngrx/effects';
 import {EntityAction, EntityCacheAction, ofEntityOp, OP_ERROR, OP_SUCCESS} from '@ngrx/data';
 import {filter} from 'rxjs/operators';
-import {GlobalConfig, ToastrService} from 'ngx-toastr';
-import {SuccessNotifToast} from '../shared/success-notif/success-notif.component';
-import {ErrorNotifToast} from '../shared/error-notif/error-notif.component';
-import * as _ from 'lodash';
+import {NotifService} from '../core/services/notif.service';
 
 @Injectable({providedIn: 'root'})
 export class NgrxDataToastService {
 
-  options: GlobalConfig;
-
-  constructor(private actions$: Actions, private toastrService: ToastrService) {
-    this.options = this.toastrService.toastrConfig;
+  constructor(private actions$: Actions, private notifService: NotifService) {
     actions$.pipe(
       ofEntityOp(),
       filter(
@@ -23,7 +17,8 @@ export class NgrxDataToastService {
       )
     )
       .subscribe(action =>
-        this.openSuccessNotif(`${action.payload.entityName} action`)
+        //this.notifService.openSuccessNotif(`${action.payload.entityName} action`)
+        console.log(action.payload)
       );
 
     actions$
@@ -34,23 +29,8 @@ export class NgrxDataToastService {
         )
       )
       .subscribe((action: any) =>
-        this.openSuccessNotif(`${action.type} - url: ${action.payload.url}`)
+        //this.notifService.openSuccessNotif(`${action.type} - url: ${action.payload.url}`)
+        console.log(action.payload)
       );
-  }
-
-  openSuccessNotif(message) {
-    const opt = _.cloneDeep(this.options);
-    opt.toastComponent = SuccessNotifToast;
-    opt.toastClass = 'notyf confirm';
-    const inserted = this.toastrService.show(message || 'Success', '', opt);
-    return inserted;
-  }
-
-  openErrorNotif(message) {
-    const opt = _.cloneDeep(this.options);
-    opt.toastComponent = ErrorNotifToast;
-    opt.toastClass = 'notyf confirm';
-    const inserted = this.toastrService.show(message || 'Error', '', opt);
-    return inserted;
   }
 }

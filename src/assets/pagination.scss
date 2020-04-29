@@ -7,7 +7,7 @@
 }
 
 .ngx-pagination .current {
-  padding: 3px 12px;
+  padding: 0.075rem 0.45rem !important;
   background: #5E35B1 !important;
   color: #fefefe;
   cursor: default;
@@ -16,9 +16,17 @@
 
 .ngx-pagination li {
   border-radius: 3px !important;
+
+  a {
+    padding: 0.075rem 0.45rem !important;
+  }
 }
 
 .justify-content-center {
   display: flex !important;
   justify-content: center !important;
+}
+
+.ngx-pagination .pagination-previous.disabled, .ngx-pagination .pagination-next.disabled {
+  padding: 0.075rem 0.45rem !important;
 }
