@@ -1,6 +1,6 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
+import {Observable, Subject, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 
 @Injectable()
@@ -10,9 +10,10 @@ export class DataService {
   baseUrl = `${this.window.location.protocol}//${this.window.location.hostname}:${this.port}`;
   customersBaseUrl = this.baseUrl + '/api/customers';
   statesBaseUrl = this.baseUrl + '/api/states';
+  refreshData: Subject<boolean>;
 
   constructor(private http: HttpClient, @Inject('Window') private window: Window) {
-
+    this.refreshData = new Subject();
   }
 
   getDataInfos(): Observable<DataInfo> {

@@ -57,8 +57,9 @@ export class CustomerEditComponent implements OnInit {
         (insertedCustomer: Customer) => {
           if (insertedCustomer) {
             this.customerForm.form.markAsPristine();
-            this.notifService.openSuccessNotif('Customer created successfully');
+            this.dataService.refreshData.next(true);
             this.customerForm.resetForm();
+            this.notifService.openSuccessNotif('Customer created successfully');
           } else {
             this.notifService.openErrorNotif('Unable to insert customer');
           }
@@ -70,6 +71,7 @@ export class CustomerEditComponent implements OnInit {
         .subscribe((status) => {
             if (status) {
               this.customerForm.form.markAsPristine();
+              this.dataService.refreshData.next(true);
               this.notifService.openSuccessNotif('Customer updated successfully');
             } else {
               this.notifService.openErrorNotif('Unable to update customer');
