@@ -23,8 +23,4 @@ export class CustomerOrdersComponent implements OnInit {
     const id = +this.route.parent.snapshot.paramMap.get('id');
     this.customer$ = this.customersService.getByKey(id);
   }
-
-  totalOrder(customer: Customer) {
-    return customer.orders.map(item => item.itemCost).reduce((a, b) => a + b);
-  }
 }

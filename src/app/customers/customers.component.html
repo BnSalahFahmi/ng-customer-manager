@@ -22,8 +22,10 @@
       </div>
     </div>
     <div class="px-4">
-      <ng-cm-customers-card [customers]="customers$ | async" [hidden]="displayMode !== 'CARD'"></ng-cm-customers-card>
-      <ng-cm-customers-grid [customers]="customers$ | async" [hidden]="displayMode !== 'GRID'"></ng-cm-customers-grid>
+      <ng-cm-customers-card [customers]="customers$ | async" [hidden]="displayMode !== 'CARD'"
+                            (deleteCustomerEvent)="onDeleteCustomer($event)"></ng-cm-customers-card>
+      <ng-cm-customers-grid [customers]="customers$ | async" [hidden]="displayMode !== 'GRID'"
+                            (deleteCustomerEvent)="onDeleteCustomer($event)"></ng-cm-customers-grid>
     </div>
   </div>
 </div>

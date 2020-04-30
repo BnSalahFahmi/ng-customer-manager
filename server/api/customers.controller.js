@@ -68,7 +68,15 @@ const updateCustomerRoute = app => {
     }
     res.json({status: status});
   });
-}
+};
+
+const deleteCustomerRoute = app => {
+  app.delete('/api/customers/:id', (req, res) => {
+    let id = +req.params.id;
+    customers.splice(customers.indexOf(customers.find(item => item.id === id)), 1);
+    res.json({status: true});
+  });
+};
 
 module.exports.activateCustomersRoutes = function (app) {
   customersRoute(app);
@@ -77,4 +85,5 @@ module.exports.activateCustomersRoutes = function (app) {
   addCustomerRoute(app);
   updateCustomerRoute(app);
   dataInfoRoute(app);
+  deleteCustomerRoute(app);
 };

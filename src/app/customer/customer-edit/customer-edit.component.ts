@@ -14,19 +14,18 @@ import * as _ from 'lodash';
 })
 export class CustomerEditComponent implements OnInit {
 
-  customer: Customer =
-    {
-      id: 0,
-      firstName: '',
-      lastName: '',
-      gender: 'male',
-      address: '',
-      city: '',
-      state: {
-        abbreviation: '',
-        name: ''
-      }
-    };
+  customer: Customer = {
+    id: 0,
+    firstName: '',
+    lastName: '',
+    gender: 'male',
+    address: '',
+    city: '',
+    state: {
+      abbreviation: '',
+      name: ''
+    }
+  };
 
   states$: Observable<State[]>;
   deleteMessageEnabled: boolean;
@@ -59,7 +58,7 @@ export class CustomerEditComponent implements OnInit {
           if (insertedCustomer) {
             this.customerForm.form.markAsPristine();
             this.notifService.openSuccessNotif('Customer created successfully');
-            this.router.navigate(['/customers']);
+            this.customerForm.resetForm();
           } else {
             this.notifService.openErrorNotif('Unable to insert customer');
           }
@@ -83,4 +82,5 @@ export class CustomerEditComponent implements OnInit {
   cancelRequest() {
     this.router.navigate(['/customers']);
   }
+
 }

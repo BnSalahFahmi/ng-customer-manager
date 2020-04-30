@@ -109,3 +109,24 @@ label.label-info {
     color: #101010 !important;
   }
 }
+
+.text-ellipsed {
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pull-right a {
+  color: #616161;
+  margin-right: -5px;
+  margin-top: 6px;
+}
+
+.pull-right a:first-child {
+  line-height: 25px;
+}
+
+.edit-icon, .delete-icon {
+  cursor: pointer;
+}

@@ -5,9 +5,10 @@ import {AnimationsService} from './animations/animations.service';
 import {LoaderComponent} from './loader/loader.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { TotalOrderPipe } from './pipes/total-order.pipe';
 
 @NgModule({
-  declarations: [LoaderComponent, CapitalizePipe],
+  declarations: [LoaderComponent, CapitalizePipe, TotalOrderPipe],
   imports: [
     CommonModule,
     SharedRoutingModule,
@@ -15,6 +16,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
   ],
   exports: [
     LoaderComponent,
+    TotalOrderPipe,
     NgxPaginationModule
   ],
   providers: [

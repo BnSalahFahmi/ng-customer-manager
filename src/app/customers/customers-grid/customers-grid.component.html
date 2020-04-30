@@ -20,8 +20,12 @@
             <td>{{ customer.address }}</td>
             <td>{{ customer.city }}</td>
             <td>{{ customer.state.name }}</td>
-            <td><span class="badge badge-info">{{ customer.orderTotal | currency:'USD':'symbol' }}</span></td>
-            <td><button class="btn-outline-border" [routerLink]="['/customers',customer.id,'orders']">View Orders</button></td>
+            <td><span class="badge badge-info">{{ customer | totalOrder | currency:'USD':'symbol' }}</span></td>
+            <td>
+              <i title="View Orders" class="fa fa-eye view-icon" [routerLink]="['/customers',customer.id,'orders']"></i>
+              <i title="Edit" class="fa fa-pencil-square-o edit-icon" [routerLink]="['/customers',customer.id,'edit']"></i>
+              <i title="Delete" class="fa fa-trash delete-icon" (click)="handleDeleteCustomerClick(customer.id)"></i>
+            </td>
           </tr>
           </tbody>
         </table>
