@@ -1,0 +1,18 @@
+<div class="modal fade" [@modal] tabindex="-1" [ngClass]="{'in': modalVisibleAnimate}"
+    [ngStyle]="{'display': modalVisible ? 'block' : 'none', 'opacity': modalVisibleAnimate ? 1 : 0}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" *ngIf="modalContent.headerVisible">
+                <button type="button" class="close" data-dismiss="modal" (click)="cancel()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">{{ modalContent.header }}</h4>
+            </div>
+            <div class="modal-body">
+                {{ modalContent.body }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="cancel()" *ngIf="modalContent.cancelButtonVisible">{{ modalContent.cancelButtonText }}</button>
+                <button type="button" class="btn btn-success" (click)="ok()" *ngIf="modalContent.OKButtonVisible">{{ modalContent.OKButtonText }}</button>
+            </div>
+        </div>
+    </div>
+</div>

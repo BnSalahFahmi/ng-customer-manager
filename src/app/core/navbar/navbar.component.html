@@ -28,7 +28,7 @@
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control form-control-sm mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <div class="log-in-out" [ngClass]="loginLogoutText === 'Login' ? 'custom-btn-success' : 'custom-btn-danger'">
-        <div class="custom-btn custom-btn_log-in-out">
+        <div class="custom-btn custom-btn_log-in-out" (click)="loginLogout()">
           <span class="custom-btn__icon">
             <i *ngIf="loginLogoutText === 'Login'" class="fa fa-sign-in"></i>
             <i *ngIf="loginLogoutText === 'Logout'" class="fa fa-sign-out"></i>

@@ -3,6 +3,7 @@ import {AppService} from '../services/app.service';
 import {map} from 'rxjs/operators';
 import {DataService} from '../services/data.service';
 import {SubSink} from 'subsink';
+import {ModalService} from '../modal/modal.service';
 
 @Component({
   selector: 'ng-cm-navbar',
@@ -16,7 +17,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   nbOrders: number;
   subs = new SubSink();
 
-  constructor(private appService: AppService, private dataService: DataService) {
+  constructor(private appService: AppService, private dataService: DataService, private modalService: ModalService) {
     this.subs.sink = this.dataService.refreshData.asObservable().subscribe(
       refresh => {
         this.getData();
@@ -37,6 +38,17 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.nbOrders = data.ordersCount;
       }
     );
+  }
+
+  loginLogout() {
+    const modalContent: ModalContent = {
+      headerVisible: false,
+      body: 'Sorry, not implemented yet !',
+      OKButtonText: 'OK',
+      cancelButtonVisible: false
+    };
+
+    this.modalService.show(modalContent);
   }
 
   ngOnDestroy(): void {

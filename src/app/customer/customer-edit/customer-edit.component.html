@@ -76,16 +76,10 @@
       </div>
       <div class="col-md-12">
         <div *ngIf="customer">
-          <div class="alert alert-warning" *ngIf="customer.id && deleteMessageEnabled">
-            Delete Customer?
-            <button class="btn btn-danger">Yes</button>
-            <button class="btn btn-default" (click)="deleteMessageEnabled = false">No</button>
-          </div>
-          <button class="btn btn-danger" *ngIf="customer.id && !deleteMessageEnabled" (click)="deleteMessageEnabled = true">
+          <button class="btn btn-danger" *ngIf="customer.id" (click)="onDeleteCustomer($event)">
             Delete
           </button>
-
-          <div class="pull-right" *ngIf="!deleteMessageEnabled">
+          <div class="pull-right">
             <button class="btn btn-danger" (click)="cancelRequest()">Cancel</button>
             <button type="submit" class="btn btn-success"
                     [disabled]="customerForm.pristine || !customerForm.valid">{{ customer.id ? 'Update' : 'Insert' }}</button>

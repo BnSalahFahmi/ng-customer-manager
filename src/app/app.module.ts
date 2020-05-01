@@ -11,6 +11,7 @@ import {environment} from '../environments/environment';
 import {ToastrModule, ToastrService} from 'ngx-toastr';
 import {AppStoreModule} from './store/app-store.module';
 import {NavbarComponent} from './core/navbar/navbar.component';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [

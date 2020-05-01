@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ROUTE_ANIMATIONS_ELEMENTS} from '../../shared/animations/route.animations';
+import {ModalService} from '../../core/modal/modal.service';
 
 @Component({
   selector: 'ng-cm-customers-card',
@@ -14,7 +15,7 @@ export class CustomersCardComponent implements OnInit {
   @Output() deleteCustomerEvent = new EventEmitter();
   page = 1;
 
-  constructor() {
+  constructor(private modalService: ModalService) {
   }
 
   ngOnInit(): void {

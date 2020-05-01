@@ -6,6 +6,7 @@ import {RouterModule} from '@angular/router';
 import {DataService} from './services/data.service';
 import {HttpClientModule} from '@angular/common/http';
 import {NotifService} from './services/notif.service';
+import {ModalModule} from './modal/modal.module';
 
 @NgModule({
   declarations: [],
@@ -13,13 +14,18 @@ import {NotifService} from './services/notif.service';
     CommonModule,
     RouterModule,
     NavbarModule,
+    ModalModule,
     HttpClientModule
   ],
-  exports: [HttpClientModule],
+  exports: [
+    ModalModule,
+    HttpClientModule
+  ],
   providers: [
     DataService,
     NotifService,
-    {provide: 'Window', useFactory: () => window}]
+    {provide: 'Window', useFactory: () => window}
+  ]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {
 

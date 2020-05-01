@@ -17,7 +17,6 @@ export class NgrxDataToastService {
       )
     )
       .subscribe(action =>
-        //this.notifService.openSuccessNotif(`${action.payload.entityName} action`)
         console.log(action.payload)
       );
 
@@ -29,7 +28,6 @@ export class NgrxDataToastService {
         )
       )
       .subscribe((action: any) =>
-        //this.notifService.openSuccessNotif(`${action.type} - url: ${action.payload.url}`)
         console.log(action.payload)
       );
   }

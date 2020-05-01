@@ -46,3 +46,13 @@ interface ApiResponse {
   status: boolean;
   error?: string;
 }
+
+interface ModalContent {
+  header?: string;
+  headerVisible?: boolean;
+  body?: string;
+  OKButtonText?: string;
+  cancelButtonText?: string;
+  OKButtonVisible?: boolean;
+  cancelButtonVisible?: boolean;
+}
