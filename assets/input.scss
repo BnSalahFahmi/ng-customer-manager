@@ -1,0 +1,6 @@
+input.form-control {
+  border-radius: 1px !important;
+  &:focus {
+    box-shadow: 0 0 0 0.14rem rgba(0,123,255,.25) !important;
+  }
+}

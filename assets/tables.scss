@@ -1,0 +1,45 @@
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-collapse: collapse;
+}
+
+table th {
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+table td {
+  font-size: .9rem;
+  font-weight: 300;
+  font-family: "Roboto",sans-serif;
+}
+
+table.table th, table.table td {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.table th, .table td {
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table-with-margin {
+  margin: 5px 10px;
+}
+
+.table-center {
+  text-align: left;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background: #f1f1f14f !important;
+}
+
+table tbody tr td:first-child {
+  background: #f1f1f1 !important;
+}
+
